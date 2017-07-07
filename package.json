@@ -37,7 +37,7 @@
   "scripts": {
     "start": "webpack-dev-server --colors --hot --config ./webpack.config.js",
     "build": "webpack --progress -p && cp ./public/* ./build",
-    "precommit": "lint-staged",
+    "pc": "lint-staged",
     "test": "jest --watch"
   },
   "dependencies": {
@@ -53,12 +53,8 @@
     "styled-components": "^2.1.0"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --es5 --write",
-      "git add"
-    ],
-    "*.jsx": [
-      "prettier --single-quote --es5 --write",
+    "*.{js,jsx}": [
+      "prettier --single-quote --es5 --no-semi --write",
       "git add"
     ]
   }
